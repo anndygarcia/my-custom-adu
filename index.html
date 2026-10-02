@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#1a1512" />
   <title>Custom ADU Builder Houston TX · Free Estimate | My Custom ADU</title>
-  <meta name="description" content="Houston'"'"'s custom ADU builder. Detached backyard cottages, garage conversions, and casitas throughout the Houston metropolitan area. Free written estimate. Call (713) 405-0340." />
+  <meta name="description" content="Houston's custom ADU builder. Detached backyard cottages, garage conversions, and casitas throughout the Houston metropolitan area. Free written estimate. Call (713) 405-0340." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://my-custom-adu.com/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Custom ADU Builder Houston TX · Free Estimate" />
-  <meta property="og:description" content="Houston'"'"'s custom ADU builder. Free written estimate for detached ADUs, garage conversions, and casitas." />
+  <meta property="og:description" content="Houston's custom ADU builder. Free written estimate for detached ADUs, garage conversions, and casitas." />
   <meta property="og:url" content="https://my-custom-adu.com/" />
   <meta property="og:image" content="https://my-custom-adu.com/assets/hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -262,7 +262,7 @@
     <div class="container contact-inner">
       <div class="contact-left">
         <span class="section-eyebrow">Get started</span>
-        <h2 class="contact-title">Let'"'"'s build your custom ADU</h2>
+        <h2 class="contact-title">Let's build your custom ADU</h2>
         <p>Free written estimate. Free site visit. No pressure.</p>
         <div class="contact-info">
           <div class="contact-item"><span class="contact-label">Call or text</span><a href="tel:+17134050340">(713) 405-0340</a></div>
@@ -324,59 +324,59 @@
 
   <script>
     (function() {
-      const preloader = document.getElementById('"'"'preloader'"'"');
-      if (sessionStorage.getItem('"'"'mcadu_visited'"'"')) { preloader.style.display='"'"'none'"'"'; return; }
+      const preloader = document.getElementById('preloader');
+      if (sessionStorage.getItem('mcadu_visited')) { preloader.style.display='none'; return; }
       setTimeout(() => {
-        preloader.classList.add('"'"'fade-out'"'"');
-        setTimeout(() => { preloader.style.display='"'"'none'"'"'; sessionStorage.setItem('"'"'mcadu_visited'"'"','"'"'1'"'"'); }, 800);
+        preloader.classList.add('fade-out');
+        setTimeout(() => { preloader.style.display='none'; sessionStorage.setItem('mcadu_visited','1'); }, 800);
       }, 1800);
     })();
 
     (function() {
-      const toggle = document.getElementById('"'"'navToggle'"'"');
-      const links = document.getElementById('"'"'navLinks'"'"');
+      const toggle = document.getElementById('navToggle');
+      const links = document.getElementById('navLinks');
       if (!toggle || !links) return;
-      toggle.addEventListener('"'"'click'"'"', () => {
-        const open = links.classList.toggle('"'"'open'"'"');
-        toggle.classList.toggle('"'"'open'"'"', open);
-        toggle.setAttribute('"'"'aria-expanded'"'"', String(open));
-        document.body.classList.toggle('"'"'nav-open'"'"', open);
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('nav-open', open);
       });
-      links.querySelectorAll('"'"'a'"'"').forEach(a => a.addEventListener('"'"'click'"'"', () => {
-        links.classList.remove('"'"'open'"'"'); toggle.classList.remove('"'"'open'"'"');
-        toggle.setAttribute('"'"'aria-expanded'"'"','"'"'false'"'"'); document.body.classList.remove('"'"'nav-open'"'"');
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        links.classList.remove('open'); toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false'); document.body.classList.remove('nav-open');
       }));
-      window.addEventListener('"'"'scroll'"'"', () => {
-        const nav = document.getElementById('"'"'nav'"'"');
-        if (window.scrollY > 80) nav.classList.add('"'"'scrolled'"'"'); else nav.classList.remove('"'"'scrolled'"'"');
+      window.addEventListener('scroll', () => {
+        const nav = document.getElementById('nav');
+        if (window.scrollY > 80) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
       });
     })();
 
     (function() {
-      const form = document.getElementById('"'"'contactForm'"'"');
-      const status = document.getElementById('"'"'formStatus'"'"');
-      const submitBtn = document.getElementById('"'"'submitBtn'"'"');
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      const submitBtn = document.getElementById('submitBtn');
       if (!form) return;
-      form.addEventListener('"'"'submit'"'"', async (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
         submitBtn.disabled = true;
-        submitBtn.textContent = '"'"'Sending…'"'"';
+        submitBtn.textContent = 'Sending…';
         status.hidden = false;
-        status.className = '"'"'form-status status-pending'"'"';
-        status.textContent = '"'"'Sending your request…'"'"';
+        status.className = 'form-status status-pending';
+        status.textContent = 'Sending your request…';
         const data = Object.fromEntries(new FormData(form).entries());
         try {
-          const r = await fetch('"'"'/api/lead'"'"', { method:'"'"'POST'"'"', headers:{'"'"'Content-Type'"'"':'"'"'application/json'"'"'}, body: JSON.stringify(data) });
-          if (!r.ok) throw new Error('"'"'Network error'"'"');
-          status.className = '"'"'form-status status-success'"'"';
-          status.textContent = "✓ Thanks — we got it. We'"'"'ll reach out within 24 hours.";
+          const r = await fetch('/api/lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
+          if (!r.ok) throw new Error('Network error');
+          status.className = 'form-status status-success';
+          status.textContent = "✓ Thanks — we got it. We'll reach out within 24 hours.";
           form.reset();
-          submitBtn.textContent = '"'"'Request Sent ✓'"'"';
+          submitBtn.textContent = 'Request Sent ✓';
         } catch (err) {
-          status.className = '"'"'form-status status-error'"'"';
-          status.textContent = '"'"'Hmm, that didn'"'"'t go through. Please call us at (713) 405-0340.'"'"';
+          status.className = 'form-status status-error';
+          status.textContent = "Hmm, that didn’t go through. Please call us at (713) 405-0340.";
           submitBtn.disabled = false;
-          submitBtn.textContent = '"'"'Send My Free Estimate Request'"'"';
+          submitBtn.textContent = 'Send My Free Estimate Request';
         }
       });
     })();
