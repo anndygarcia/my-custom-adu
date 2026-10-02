@@ -1,0 +1,8 @@
+# Build artifacts
+node_modules/
+.DS_Store
+*.log
+
+# Local env
+.env
+.env.local
