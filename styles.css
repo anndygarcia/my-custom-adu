@@ -637,7 +637,7 @@ a { color: var(--color-ink); text-decoration: none; }
   margin: 0 0 40px;
   text-align: center;
 }
-.lead-form { position: relative; }
+.lead-form { position: relative; scroll-margin-top: 100px; }
 .field { margin-bottom: 20px; }
 .field-row {
   display: grid;

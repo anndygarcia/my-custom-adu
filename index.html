@@ -112,7 +112,7 @@
         <a href="#process">Process</a>
         <a href="#areas">Service Area</a>
         <a href="#faq">FAQ</a>
-        <a class="nav-cta" href="#contact">Free Estimate</a>
+        <a class="nav-cta" href="#contactForm">Free Estimate</a>
       </nav>
     </div>
   </header>
@@ -130,7 +130,7 @@
         <p class="hero-tagline">Whatever you want to add to your property — designed and built around you, not a catalog.</p>
       </div>
       <div class="hero-bottom">
-        <a class="hero-cta" href="#contact">Free Estimate →</a>
+        <a class="hero-cta" href="#contactForm">Free Estimate →</a>
         <a class="hero-cta hero-cta-outline" href="tel:+17134050340">(713) 405-0340</a>
       </div>
     </div>
@@ -154,63 +154,63 @@
         <p class="section-sub">Every project starts with you — what you want to add, how you want to use it, and how you want it to look. Here are some of the things our customers have built.</p>
       </div>
       <div class="concept-grid">
-        <a class="concept-card concept-card-tall" href="#contact">
+        <a class="concept-card concept-card-tall" href="#contactForm">
           <div class="concept-image"><img src="/assets/concepts/tiny_home.jpg" alt="Custom tiny home with loft in Houston backyard" loading="lazy" /></div>
           <div class="concept-info">
             <h3>Tiny Home</h3>
             <p>A fully livable small home, designed and finished to your taste.</p>
           </div>
         </a>
-        <a class="concept-card" href="#contact">
+        <a class="concept-card" href="#contactForm">
           <div class="concept-image"><img src="/assets/concepts/studio.jpg" alt="Backyard studio interior" loading="lazy" /></div>
           <div class="concept-info">
             <h3>Backyard Studio</h3>
             <p>Work, create, or just get away — without leaving the property.</p>
           </div>
         </a>
-        <a class="concept-card" href="#contact">
+        <a class="concept-card" href="#contactForm">
           <div class="concept-image"><img src="/assets/concepts/sauna.jpg" alt="Custom outdoor sauna build" loading="lazy" /></div>
           <div class="concept-info">
             <h3>Sauna</h3>
             <p>Outdoor or indoor. Traditional wood-fired or electric.</p>
           </div>
         </a>
-        <a class="concept-card" href="#contact">
+        <a class="concept-card" href="#contactForm">
           <div class="concept-image"><img src="/assets/concepts/gym.jpg" alt="Custom home gym build" loading="lazy" /></div>
           <div class="concept-info">
             <h3>Home Gym</h3>
             <p>Skip the commute. Build the gym you&rsquo;ve always wanted.</p>
           </div>
         </a>
-        <a class="concept-card" href="#contact">
+        <a class="concept-card" href="#contactForm">
           <div class="concept-image"><img src="/assets/concepts/man_cave.jpg" alt="Custom man cave build" loading="lazy" /></div>
           <div class="concept-info">
             <h3>Man Cave / She Shed</h3>
             <p>Your space. Set up for the way you actually use it.</p>
           </div>
         </a>
-        <a class="concept-card" href="#contact">
+        <a class="concept-card" href="#contactForm">
           <div class="concept-image"><img src="/assets/concepts/home_office.jpg" alt="Custom home office studio" loading="lazy" /></div>
           <div class="concept-info">
             <h3>Home Office</h3>
             <p>Quiet, dedicated, designed around how you work best.</p>
           </div>
         </a>
-        <a class="concept-card" href="#contact">
+        <a class="concept-card" href="#contactForm">
           <div class="concept-image"><img src="/assets/concepts/pool_house.jpg" alt="Custom pool house build" loading="lazy" /></div>
           <div class="concept-info">
             <h3>Pool House</h3>
             <p>Bath house, lounge, kitchen, or all of the above.</p>
           </div>
         </a>
-        <a class="concept-card" href="#contact">
+        <a class="concept-card" href="#contactForm">
           <div class="concept-image"><img src="/assets/concepts/guest_house.jpg" alt="Custom in-law suite or guest house" loading="lazy" /></div>
           <div class="concept-info">
             <h3>In-Law Suite / Guest House</h3>
             <p>Private, comfortable, and designed for long-term living.</p>
           </div>
         </a>
-        <a class="concept-card" href="#contact">
+        <a class="concept-card" href="#contactForm">
           <div class="concept-image"><img src="/assets/concepts/play_house.jpg" alt="Custom kids play house build" loading="lazy" /></div>
           <div class="concept-info">
             <h3>Kids Play House</h3>
@@ -338,7 +338,7 @@
       </div>
       <div class="footer-links">
         <a href="#projects">Projects</a><a href="#process">Process</a>
-        <a href="#contact">Free Estimate</a>
+        <a href="#contactForm">Free Estimate</a>
       </div>
       <div class="footer-legal">© 2026 My Custom ADU · Houston, TX</div>
     </div>
@@ -403,6 +403,25 @@
           submitBtn.textContent = 'Send My Free Estimate Request';
         }
       });
+    })();
+
+    // Auto-focus the first form input when the URL hash is #contactForm
+    (function() {
+      function focusFormInput() {
+        if (window.location.hash === '#contactForm') {
+          const form = document.getElementById('contactForm');
+          if (form) {
+            // Wait for the smooth scroll to settle, then focus the first input
+            setTimeout(() => {
+              const firstInput = form.querySelector('input, select, textarea');
+              if (firstInput) firstInput.focus({ preventScroll: true });
+            }, 600);
+          }
+        }
+      }
+      window.addEventListener('hashchange', focusFormInput);
+      // Also run on initial load (in case the page loaded with #contactForm in the URL)
+      window.addEventListener('load', focusFormInput);
     })();
   </script>
 </body>
